@@ -2,8 +2,9 @@
 #include <vector>
 #include "AllClasses.h"
 #include <ctime>
-#include "Player.h"
+#include "Composite.h"
 #include <memory>
+#include <algorithm>
 
 using std::unique_ptr;
 using std::shared_ptr;
@@ -20,29 +21,61 @@ enum CTypeOfComponent {
     COMP_TARGET_SKILL,
 };
 
-class IComponent {
-public:
-    virtual CTypeOfComponent GetType() = 0;
-    virtual ~IComponent();
-    //virtual void Update(double dt) = 0;
-};
+/**
+ * \brief Класс CTower
+ *
+ * Содержит вектор указателей на компаненты
+ *
+ */
 
-class CTower {
+class CTower : public IComposite{
 private:
     std::vector<unique_ptr<IComponent> > components;
 public:
+
+	/**
+	 * \brief Функция добавляющая компоненту в components
+	 * @param comp - указатель на компоненту
+	 */
+
     void AddComponent(IComponent* comp);
+
+    void Update(double dtime) override ;
+
+    void Die();
 };
+
+/**
+ * \brief Интерфейс фабрики
+ */
 
 class IFactory {
 public:
-    virtual ~IFactory();
+    virtual ~IFactory() = default;
+    /**
+     * \brief Создает башню
+     * \param Указатель на игрока, на чьей стороне башня, и указатель на точку, на
+     * которой башня находится
+     * @return Указатель на созданную башню
+     */
     virtual CTower* Create(CPoint*, CPlayer*) = 0;
+    /**
+     * \brief Возвращает время отката башни
+     */
     virtual int GetCD() const = 0;  //added that
+	/**
+	 * \brief Возвращает стоимость башни
+	 */
     virtual int GetCOST() const = 0; //added that
 };
 
+
+
 //------------------------------------------------------
+
+/**
+ * \brief Реализация Фабрики для обычной башни
+ */
 
 class CFactoryNormal : public IFactory {
 private:
@@ -56,10 +89,12 @@ private:
 public:
     int GetCD() const;
     int GetCOST() const;
-
     virtual CTower* Create(CPoint*, CPlayer*);
 };
 
+/**
+ * \brief Реализация Фабрики для дальнобойной башни
+ */
 
 class CFactoryLongRange : public IFactory {
 private:
@@ -71,27 +106,32 @@ private:
     const int COST = 15;
 
 public:
+
     int GetCD() const;
     int GetCOST() const;
-
     virtual CTower* Create(CPoint*, CPlayer*);
 };
 
+/**
+ * \brief Реализация Фабрики для защитной башни
+ */
 
-class CFactoryProtective : public IFactory { //what to do with that?
+class CFactoryProtective : public IFactory {
 private:
     const int HP = 200;
     const int CD = 10;
     const int COST = 15;
 
 public:
+
     int GetCD() const;
     int GetCOST() const;
-
     virtual CTower* Create(CPoint*, CPlayer*);
 };
 
-
+/**
+ * \brief Реализация Фабрики для ракетной установки
+ */
 
 class CFactoryMissile : public IFactory {
 private:
@@ -101,12 +141,17 @@ private:
     const int COST = 25;
 
 public:
+
     int GetCD() const;
+
     int GetCOST() const;
 
     virtual CTower* Create(CPoint*, CPlayer*);
 };
 
+/**
+ * \brief Реализация Фабрики для башни поддержки
+ */
 
 class CFactorySupport : public IFactory {
 private:
@@ -118,13 +163,16 @@ private:
     const int COST = 15;
 
 public:
+
     int GetCD() const;
     int GetCOST() const;
 
     virtual CTower* Create(CPoint*, CPlayer*);
 };
 
-
+/**
+ * \brief Реализация Фабрики для мобильной башни
+ */
 
 class CFactoryMoving : public IFactory {
 private:
@@ -138,12 +186,17 @@ private:
     const int COST = 25;
 
 public:
+
     int GetCD() const;
+
     int GetCOST() const;
 
     virtual CTower* Create(CPoint*, CPlayer*);
 };
 
+/**
+ * \brief Реализация Фабрики для хилящей башни
+ */
 
 class CFactoryHealer : public IFactory {
 private:
@@ -154,12 +207,15 @@ private:
     const int COST = 20;
 
 public:
+
     int GetCD() const;
     int GetCOST() const;
-
     virtual CTower* Create(CPoint*, CPlayer*);
 };
 
+/**
+ * \brief Реализация Фабрики для добывающей башни
+ */
 
 class CFactoryEnlarger : public IFactory {
 private:
@@ -169,12 +225,16 @@ private:
     const int COST = 20;
 
 public:
+
+
     int GetCD() const;
     int GetCOST() const;
-
     virtual CTower* Create(CPoint*, CPlayer*);
 };
 
+/**
+ * \brief Реализация Фабрики для генератора
+ */
 
 class CFactoryGenerator : public IFactory { //do something with generating
 private:
@@ -184,12 +244,15 @@ private:
     const int COST = 10;
 
 public:
+
     int GetCD() const;
     int GetCOST() const;
-
     virtual CTower* Create(CPoint*, CPlayer*);
 };
 
+/**
+ * \brief Реализация Фабрики для базы
+ */
 
 class CFactoryBase : public IFactory {
 private:
@@ -201,9 +264,9 @@ private:
     const int COST = 10;
 
 public:
+
     int GetCD() const;
     int GetCOST() const;
-
     virtual CTower* Create(CPoint*, CPlayer*);
 };
 //****************************************************
