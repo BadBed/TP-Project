@@ -2,6 +2,7 @@
 #include "AllClasses.h"
 #include "Player.h"
 #include "Tower.h"
+#include "Map.h"
 #include <vector>
 
 /**
@@ -21,10 +22,10 @@ private:
     
 public:
 
-    std::vector<CPoint*> points;
+    CMap map;
     CPlayer player1;
     CPlayer player2;
-    ~CGame();
+    ~CGame() = default;
 
     CGame(const CGame&) = delete;
     const CGame& operator=(const CGame&) = delete;
