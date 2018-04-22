@@ -1,0 +1,66 @@
+\hypertarget{classCFactoryHealer}{}\section{C\+Factory\+Healer Class Reference}
+\label{classCFactoryHealer}\index{C\+Factory\+Healer@{C\+Factory\+Healer}}
+
+
+Реализация Фабрики для хилящей башни  
+
+
+
+
+{\ttfamily \#include $<$Tower.\+h$>$}
+
+
+
+Inheritance diagram for C\+Factory\+Healer\+:
+% FIG 0
+
+
+Collaboration diagram for C\+Factory\+Healer\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classCFactoryHealer_a056922f67da48d8a683f1f0a6d647e3b}{Get\+CD} () const override\hypertarget{classCFactoryHealer_a056922f67da48d8a683f1f0a6d647e3b}{}\label{classCFactoryHealer_a056922f67da48d8a683f1f0a6d647e3b}
+
+\begin{DoxyCompactList}\small\item\em Возвращает время отката башни \end{DoxyCompactList}\item 
+int \hyperlink{classCFactoryHealer_af8b62fbfe7d91ba39d42f1338e9c666e}{Get\+C\+O\+ST} () const override\hypertarget{classCFactoryHealer_af8b62fbfe7d91ba39d42f1338e9c666e}{}\label{classCFactoryHealer_af8b62fbfe7d91ba39d42f1338e9c666e}
+
+\begin{DoxyCompactList}\small\item\em Возвращает стоимость башни \end{DoxyCompactList}\item 
+\hyperlink{classCTower}{C\+Tower} $\ast$ \hyperlink{classCFactoryHealer_acd3ce4706a9022f5799ed3a7215a41d4}{Create} (\hyperlink{classCPoint}{C\+Point} $\ast$, \hyperlink{classCPlayer}{C\+Player} $\ast$) override
+\begin{DoxyCompactList}\small\item\em Создает башню \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Реализация Фабрики для хилящей башни 
+
+\subsection{Member Function Documentation}
+\index{C\+Factory\+Healer@{C\+Factory\+Healer}!Create@{Create}}
+\index{Create@{Create}!C\+Factory\+Healer@{C\+Factory\+Healer}}
+\subsubsection[{\texorpdfstring{Create(\+C\+Point $\ast$, C\+Player $\ast$) override}{Create(CPoint *, CPlayer *) override}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Tower} $\ast$ C\+Factory\+Healer\+::\+Create (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Point} $\ast$}]{, }
+\item[{{\bf C\+Player} $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classCFactoryHealer_acd3ce4706a9022f5799ed3a7215a41d4}{}\label{classCFactoryHealer_acd3ce4706a9022f5799ed3a7215a41d4}
+
+
+Создает башню 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Указатель} & на игрока, на чьей стороне башня, и указатель на точку, на которой башня находится \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Указатель на созданную башню 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classIFactory_a8d9bec1f0a8e76f379c40240296be71c}{I\+Factory}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Tower.\+h\item 
+Tower.\+cpp\end{DoxyCompactItemize}

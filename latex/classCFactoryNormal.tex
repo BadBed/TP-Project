@@ -1,0 +1,66 @@
+\hypertarget{classCFactoryNormal}{}\section{C\+Factory\+Normal Class Reference}
+\label{classCFactoryNormal}\index{C\+Factory\+Normal@{C\+Factory\+Normal}}
+
+
+Реализация Фабрики для обычной башни  
+
+
+
+
+{\ttfamily \#include $<$Tower.\+h$>$}
+
+
+
+Inheritance diagram for C\+Factory\+Normal\+:
+% FIG 0
+
+
+Collaboration diagram for C\+Factory\+Normal\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classCFactoryNormal_a1d5f550ca47d1c225825f71cc3a09c0b}{Get\+CD} () const override\hypertarget{classCFactoryNormal_a1d5f550ca47d1c225825f71cc3a09c0b}{}\label{classCFactoryNormal_a1d5f550ca47d1c225825f71cc3a09c0b}
+
+\begin{DoxyCompactList}\small\item\em Возвращает время отката башни \end{DoxyCompactList}\item 
+int \hyperlink{classCFactoryNormal_ac8b3b9ee22636cc2252bd9f7d78b6b3a}{Get\+C\+O\+ST} () const override\hypertarget{classCFactoryNormal_ac8b3b9ee22636cc2252bd9f7d78b6b3a}{}\label{classCFactoryNormal_ac8b3b9ee22636cc2252bd9f7d78b6b3a}
+
+\begin{DoxyCompactList}\small\item\em Возвращает стоимость башни \end{DoxyCompactList}\item 
+\hyperlink{classCTower}{C\+Tower} $\ast$ \hyperlink{classCFactoryNormal_af7b86c0f61e356b08e1f4edada257c93}{Create} (\hyperlink{classCPoint}{C\+Point} $\ast$, \hyperlink{classCPlayer}{C\+Player} $\ast$) override
+\begin{DoxyCompactList}\small\item\em Создает башню \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Реализация Фабрики для обычной башни 
+
+\subsection{Member Function Documentation}
+\index{C\+Factory\+Normal@{C\+Factory\+Normal}!Create@{Create}}
+\index{Create@{Create}!C\+Factory\+Normal@{C\+Factory\+Normal}}
+\subsubsection[{\texorpdfstring{Create(\+C\+Point $\ast$, C\+Player $\ast$) override}{Create(CPoint *, CPlayer *) override}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Tower} $\ast$ C\+Factory\+Normal\+::\+Create (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Point} $\ast$}]{, }
+\item[{{\bf C\+Player} $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classCFactoryNormal_af7b86c0f61e356b08e1f4edada257c93}{}\label{classCFactoryNormal_af7b86c0f61e356b08e1f4edada257c93}
+
+
+Создает башню 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Указатель} & на игрока, на чьей стороне башня, и указатель на точку, на которой башня находится \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Указатель на созданную башню 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classIFactory_a8d9bec1f0a8e76f379c40240296be71c}{I\+Factory}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Tower.\+h\item 
+Tower.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,82 @@
+\hypertarget{classIComponent}{}\section{I\+Component Class Reference}
+\label{classIComponent}\index{I\+Component@{I\+Component}}
+
+
+Интерфейс компоненты  
+
+
+
+
+{\ttfamily \#include $<$Tower\+Components.\+h$>$}
+
+
+
+Inheritance diagram for I\+Component\+:
+% FIG 0
+
+
+Collaboration diagram for I\+Component\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual C\+Type\+Of\+Component \hyperlink{classIComponent_abc6bea1a66ef9d2227373e0ff8553b75}{Get\+Type} ()=0
+\begin{DoxyCompactList}\small\item\em Функция, возвращающая тип компоненты \end{DoxyCompactList}\item 
+void \hyperlink{classIComponent_a12217e57a33f8978af5610511eaddad5}{Update} (double dt) override
+\begin{DoxyCompactList}\small\item\em Функция, обновляющаяя состояние объекта Переопределена в наследниках класса \hyperlink{classIComposite}{I\+Composite}, к которым относятся\+: Game, Player, Point, Tower, Component. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classIComponent_a0316e5555d3f8db1bac9c825f874175f}{Die} ()\hypertarget{classIComponent_a0316e5555d3f8db1bac9c825f874175f}{}\label{classIComponent_a0316e5555d3f8db1bac9c825f874175f}
+
+\begin{DoxyCompactList}\small\item\em Функция, уничтожающая компоненту \end{DoxyCompactList}\item 
+void \hyperlink{classIComponent_a2ca444b58689635dc1a7d71d2a582b75}{Set\+Tower} (\hyperlink{classCTower}{C\+Tower} $\ast$)\hypertarget{classIComponent_a2ca444b58689635dc1a7d71d2a582b75}{}\label{classIComponent_a2ca444b58689635dc1a7d71d2a582b75}
+
+\begin{DoxyCompactList}\small\item\em Функция, устанавливающая, к какой башне привязана компанента \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Интерфейс компоненты 
+
+\subsection{Member Function Documentation}
+\index{I\+Component@{I\+Component}!Get\+Type@{Get\+Type}}
+\index{Get\+Type@{Get\+Type}!I\+Component@{I\+Component}}
+\subsubsection[{\texorpdfstring{Get\+Type()=0}{GetType()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual C\+Type\+Of\+Component I\+Component\+::\+Get\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classIComponent_abc6bea1a66ef9d2227373e0ff8553b75}{}\label{classIComponent_abc6bea1a66ef9d2227373e0ff8553b75}
+
+
+Функция, возвращающая тип компоненты 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classCComponentShoudNotDie_a41d8aface6969cdab7bdc5cbb23bc43a}{C\+Component\+Shoud\+Not\+Die}, \hyperlink{classIComponentPassiveSkill_a394d1dd381c8e21c7dfef2aa94de1a39}{I\+Component\+Passive\+Skill}, \hyperlink{classIComponentActiveSkill_ae976dc8a52d5df12bc6d50d9da58b6f8}{I\+Component\+Active\+Skill}, \hyperlink{classIComponentTargetSkill_a5821b248bd92a5c3cae979a1a08735f0}{I\+Component\+Target\+Skill}, \hyperlink{classIComponentPower_a12abdbbde70514b9996b9e7cf5299384}{I\+Component\+Power}, \hyperlink{classIComponentHealth_a159be3012c7430e142d5694869161633}{I\+Component\+Health}, \hyperlink{classIComponentAccessory_ab01d49dc974a10e7e7e13fd4ad128562}{I\+Component\+Accessory}, \hyperlink{classIComponentGraphic_a0458eb01b65adbc1f46d27b0a12c8f05}{I\+Component\+Graphic}, and \hyperlink{classIComponentPosition_a8ce17064ac93207b9b94ecf888a6259d}{I\+Component\+Position}.
+
+\index{I\+Component@{I\+Component}!Update@{Update}}
+\index{Update@{Update}!I\+Component@{I\+Component}}
+\subsubsection[{\texorpdfstring{Update(double dt) override}{Update(double dt) override}}]{\setlength{\rightskip}{0pt plus 5cm}void I\+Component\+::\+Update (
+\begin{DoxyParamCaption}
+\item[{double}]{dtime}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classIComponent_a12217e57a33f8978af5610511eaddad5}{}\label{classIComponent_a12217e57a33f8978af5610511eaddad5}
+
+
+Функция, обновляющаяя состояние объекта Переопределена в наследниках класса \hyperlink{classIComposite}{I\+Composite}, к которым относятся\+: Game, Player, Point, Tower, Component. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dtime} & -\/ время прошедшее с предыдущего запуска Update \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classIComposite_a75a8ab8f27a49b87e0c61e735fa00afd}{I\+Composite}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Tower\+Components.\+h\item 
+Tower\+Components.\+cpp\end{DoxyCompactItemize}

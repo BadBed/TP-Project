@@ -1,0 +1,52 @@
+\hypertarget{classCComponentAccessory}{}\section{C\+Component\+Accessory Class Reference}
+\label{classCComponentAccessory}\index{C\+Component\+Accessory@{C\+Component\+Accessory}}
+
+
+Реализация интерфейса компоненты принадлежности  
+
+
+
+
+{\ttfamily \#include $<$Tower\+Components.\+h$>$}
+
+
+
+Inheritance diagram for C\+Component\+Accessory\+:
+% FIG 0
+
+
+Collaboration diagram for C\+Component\+Accessory\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCComponentAccessory_a7d26f211c0b4e9494c145ecc33ee5da7}{C\+Component\+Accessory} (\hyperlink{classCPlayer}{C\+Player} $\ast$player)
+\begin{DoxyCompactList}\small\item\em Конструктор, задающий игрока \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Реализация интерфейса компоненты принадлежности 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{C\+Component\+Accessory@{C\+Component\+Accessory}!C\+Component\+Accessory@{C\+Component\+Accessory}}
+\index{C\+Component\+Accessory@{C\+Component\+Accessory}!C\+Component\+Accessory@{C\+Component\+Accessory}}
+\subsubsection[{\texorpdfstring{C\+Component\+Accessory(\+C\+Player $\ast$player)}{CComponentAccessory(CPlayer *player)}}]{\setlength{\rightskip}{0pt plus 5cm}C\+Component\+Accessory\+::\+C\+Component\+Accessory (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Player} $\ast$}]{player}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\hypertarget{classCComponentAccessory_a7d26f211c0b4e9494c145ecc33ee5da7}{}\label{classCComponentAccessory_a7d26f211c0b4e9494c145ecc33ee5da7}
+
+
+Конструктор, задающий игрока 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & -\/ указатель на игрока \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Tower\+Components.\+h\item 
+Tower\+Components.\+cpp\end{DoxyCompactItemize}
