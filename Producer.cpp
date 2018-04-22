@@ -1,19 +1,19 @@
 #include "Producer.h"
 
-IProducer::~IProducer() {}
 
 //************************************************
+
+/**
+ * \brief Реализация функций класса CProducer
+ */
+
 CProducer::CProducer() {
 	_factory = nullptr;
 	_player = nullptr;
 	_cd = 0;
 }
 
-CProducer::~CProducer() {
-
-}
-
-void CProducer::SetFactoryAndPlayer(CPlayer* player, shared_ptr<IFactory> factory)
+void CProducer::SetFactoryAndPlayer(CPlayer* player, IFactory* factory)
 {
 	_factory = factory;
 	_player = player;

@@ -4,6 +4,7 @@
 #include "Producer.h"
 #include "Game.h"
 #include "Point.h"
+#include "TowerComponents.h"
 
 
 TEST(PrjTest, TestCGame){
@@ -17,7 +18,7 @@ TEST(PrjTest, TestCGame){
 
 TEST(PrjTest, TestProducer){
     IProducer* producer = new CProducer;
-    shared_ptr<IFactory> fac = std::make_shared<CFactoryEnlarger>();
+    IFactory* fac = new CFactoryEnlarger;
     CPlayer pl;
     pl.money = 30;
     CPoint po;
@@ -29,16 +30,18 @@ TEST(PrjTest, TestProducer){
     EXPECT_FALSE(producer->IsAbleToCreate());
     delete tower;
     delete producer;
+    delete fac;
 }
 
 TEST(PrjTest, TestCDAndCost){
-    shared_ptr<IFactory> fac = std::make_shared<CFactoryEnlarger>();
+    IFactory* fac = new CFactoryEnlarger;
     CPlayer pl;
     pl.money = 30;
     CPoint po;
 
     EXPECT_EQ(20, fac->GetCD());
     EXPECT_EQ(20, fac->GetCOST());
+    delete fac;
 }
 
 TEST(PrjTest, TwoProducersOneFactory) {
@@ -49,11 +52,9 @@ TEST(PrjTest, TwoProducersOneFactory) {
     CPoint po;
     pl.money = 1000;
 
-    {
-        shared_ptr<IFactory> fac = std::make_shared<CFactoryMissile>();
-        producer1->SetFactoryAndPlayer(&pl, fac);
-        producer2->SetFactoryAndPlayer(&pl, fac);
-    }
+    IFactory* fac = new CFactoryMissile;
+    producer1->SetFactoryAndPlayer(&pl, fac);
+    producer2->SetFactoryAndPlayer(&pl, fac);
 
     CTower* tower1 = producer1->Create(&po);
     delete producer1;
@@ -66,6 +67,31 @@ TEST(PrjTest, TwoProducersOneFactory) {
     delete tower1;
     delete tower2;
     delete producer2;
+    delete fac;
+}
+
+TEST(PrjTest, Composite) {
+    class CFoo : public IComposite {
+    public:
+        double x;
+        CFoo(): x(0.0) {}
+
+        void Update(double dt) override {
+            x += dt;
+        }
+    };
+
+    CFoo x;
+    CFoo y;
+    CFoo z;
+    x.AddChild(static_cast<IComposite*>(&y));
+    y.AddChild(static_cast<IComposite*>(&z));
+    x.DeepUpdate(0.1);
+    y.DeepUpdate(0.5);
+
+    EXPECT_EQ(x.x, 0.1);
+    EXPECT_EQ(y.x, 0.6);
+    EXPECT_EQ(z.x, 0.6);
 }
 
 int main(int argc, char **argv) {
