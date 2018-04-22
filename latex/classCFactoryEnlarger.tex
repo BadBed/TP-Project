@@ -1,0 +1,66 @@
+\hypertarget{classCFactoryEnlarger}{}\section{C\+Factory\+Enlarger Class Reference}
+\label{classCFactoryEnlarger}\index{C\+Factory\+Enlarger@{C\+Factory\+Enlarger}}
+
+
+Реализация Фабрики для добывающей башни  
+
+
+
+
+{\ttfamily \#include $<$Tower.\+h$>$}
+
+
+
+Inheritance diagram for C\+Factory\+Enlarger\+:
+% FIG 0
+
+
+Collaboration diagram for C\+Factory\+Enlarger\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classCFactoryEnlarger_ac27cac9cd10c75392db7f419d90e5ee8}{Get\+CD} () const override\hypertarget{classCFactoryEnlarger_ac27cac9cd10c75392db7f419d90e5ee8}{}\label{classCFactoryEnlarger_ac27cac9cd10c75392db7f419d90e5ee8}
+
+\begin{DoxyCompactList}\small\item\em Возвращает время отката башни \end{DoxyCompactList}\item 
+int \hyperlink{classCFactoryEnlarger_aba4238e18209d327012be2f2b2f33b15}{Get\+C\+O\+ST} () const override\hypertarget{classCFactoryEnlarger_aba4238e18209d327012be2f2b2f33b15}{}\label{classCFactoryEnlarger_aba4238e18209d327012be2f2b2f33b15}
+
+\begin{DoxyCompactList}\small\item\em Возвращает стоимость башни \end{DoxyCompactList}\item 
+\hyperlink{classCTower}{C\+Tower} $\ast$ \hyperlink{classCFactoryEnlarger_ac5b8ad647ba87991fb0271e2768e6d0d}{Create} (\hyperlink{classCPoint}{C\+Point} $\ast$, \hyperlink{classCPlayer}{C\+Player} $\ast$) override
+\begin{DoxyCompactList}\small\item\em Создает башню \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Реализация Фабрики для добывающей башни 
+
+\subsection{Member Function Documentation}
+\index{C\+Factory\+Enlarger@{C\+Factory\+Enlarger}!Create@{Create}}
+\index{Create@{Create}!C\+Factory\+Enlarger@{C\+Factory\+Enlarger}}
+\subsubsection[{\texorpdfstring{Create(\+C\+Point $\ast$, C\+Player $\ast$) override}{Create(CPoint *, CPlayer *) override}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Tower} $\ast$ C\+Factory\+Enlarger\+::\+Create (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Point} $\ast$}]{, }
+\item[{{\bf C\+Player} $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classCFactoryEnlarger_ac5b8ad647ba87991fb0271e2768e6d0d}{}\label{classCFactoryEnlarger_ac5b8ad647ba87991fb0271e2768e6d0d}
+
+
+Создает башню 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Указатель} & на игрока, на чьей стороне башня, и указатель на точку, на которой башня находится \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Указатель на созданную башню 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classIFactory_a8d9bec1f0a8e76f379c40240296be71c}{I\+Factory}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Tower.\+h\item 
+Tower.\+cpp\end{DoxyCompactItemize}

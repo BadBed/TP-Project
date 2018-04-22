@@ -1,0 +1,110 @@
+\hypertarget{classCGame}{}\section{C\+Game Class Reference}
+\label{classCGame}\index{C\+Game@{C\+Game}}
+
+
+Класс Игра  
+
+
+
+
+{\ttfamily \#include $<$Game.\+h$>$}
+
+
+
+Inheritance diagram for C\+Game\+:
+% FIG 0
+
+
+Collaboration diagram for C\+Game\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries C\+Game} (const \hyperlink{classCGame}{C\+Game} \&)=delete\hypertarget{classCGame_af7631392fe28c5e2572af426b48f44b8}{}\label{classCGame_af7631392fe28c5e2572af426b48f44b8}
+
+\item 
+const \hyperlink{classCGame}{C\+Game} \& {\bfseries operator=} (const \hyperlink{classCGame}{C\+Game} \&)=delete\hypertarget{classCGame_a5814a055a7c146adecd9c196a26bba5b}{}\label{classCGame_a5814a055a7c146adecd9c196a26bba5b}
+
+\item 
+void \hyperlink{classCGame_a7fd9071f64f9f8593ba7ef97e52747b0}{Update} (double dtime) override
+\begin{DoxyCompactList}\small\item\em Функция, обновляющаяя состояние объекта Переопределена в наследниках класса \hyperlink{classIComposite}{I\+Composite}, к которым относятся\+: Game, Player, Point, Tower, Component. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCGame}{C\+Game} $\ast$ \hyperlink{classCGame_a324bb18369f06a07c27104493498456c}{Instance} ()
+\begin{DoxyCompactList}\small\item\em Функция, создающая игру \end{DoxyCompactList}\item 
+static void \hyperlink{classCGame_a025721a43ac0307fc207ada0bd9bb695}{Delete\+Instance} ()
+\begin{DoxyCompactList}\small\item\em Функция, удаляющая объект класса игра \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \hyperlink{classCPoint}{C\+Point} $\ast$ $>$ {\bfseries points}\hypertarget{classCGame_a097ee591c12c59f07878d02c3d95518c}{}\label{classCGame_a097ee591c12c59f07878d02c3d95518c}
+
+\item 
+\hyperlink{classCPlayer}{C\+Player} {\bfseries player1}\hypertarget{classCGame_a8d44159b3651e0f63002626aecb1a7c6}{}\label{classCGame_a8d44159b3651e0f63002626aecb1a7c6}
+
+\item 
+\hyperlink{classCPlayer}{C\+Player} {\bfseries player2}\hypertarget{classCGame_a49cdd9870b6c4ad4380da306739d2df8}{}\label{classCGame_a49cdd9870b6c4ad4380da306739d2df8}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Класс Игра 
+
+Класс Игра выполнен с применением паттерна singleton В ней хранится вектор указателей на точки, 2 объекта класса Игрок 
+
+\subsection{Member Function Documentation}
+\index{C\+Game@{C\+Game}!Delete\+Instance@{Delete\+Instance}}
+\index{Delete\+Instance@{Delete\+Instance}!C\+Game@{C\+Game}}
+\subsubsection[{\texorpdfstring{Delete\+Instance()}{DeleteInstance()}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Game\+::\+Delete\+Instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classCGame_a025721a43ac0307fc207ada0bd9bb695}{}\label{classCGame_a025721a43ac0307fc207ada0bd9bb695}
+
+
+Функция, удаляющая объект класса игра 
+
+Реализация функции Delete\+Instance. \index{C\+Game@{C\+Game}!Instance@{Instance}}
+\index{Instance@{Instance}!C\+Game@{C\+Game}}
+\subsubsection[{\texorpdfstring{Instance()}{Instance()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Game} $\ast$ C\+Game\+::\+Instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classCGame_a324bb18369f06a07c27104493498456c}{}\label{classCGame_a324bb18369f06a07c27104493498456c}
+
+
+Функция, создающая игру 
+
+Реализация функции Instance.
+
+\begin{DoxyReturn}{Returns}
+Указатель на объект класса \hyperlink{classCGame}{C\+Game} 
+\end{DoxyReturn}
+\index{C\+Game@{C\+Game}!Update@{Update}}
+\index{Update@{Update}!C\+Game@{C\+Game}}
+\subsubsection[{\texorpdfstring{Update(double dtime) override}{Update(double dtime) override}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Game\+::\+Update (
+\begin{DoxyParamCaption}
+\item[{double}]{dtime}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classCGame_a7fd9071f64f9f8593ba7ef97e52747b0}{}\label{classCGame_a7fd9071f64f9f8593ba7ef97e52747b0}
+
+
+Функция, обновляющаяя состояние объекта Переопределена в наследниках класса \hyperlink{classIComposite}{I\+Composite}, к которым относятся\+: Game, Player, Point, Tower, Component. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dtime} & -\/ время прошедшее с предыдущего запуска Update \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classIComposite_a75a8ab8f27a49b87e0c61e735fa00afd}{I\+Composite}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Game.\+h\item 
+Game.\+cpp\end{DoxyCompactItemize}
