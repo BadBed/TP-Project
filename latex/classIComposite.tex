@@ -1,0 +1,106 @@
+\hypertarget{classIComposite}{}\section{I\+Composite Class Reference}
+\label{classIComposite}\index{I\+Composite@{I\+Composite}}
+
+
+Класс \hyperlink{classIComposite}{I\+Composite} Объекты Game, Player, Point, Tower, Component являются наследниками компоновщика. В компоновщике содержится вектор детей -\/ указателей на другой компоновщик  
+
+
+
+
+{\ttfamily \#include $<$Composite.\+h$>$}
+
+
+
+Inheritance diagram for I\+Composite\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classIComposite_a75a8ab8f27a49b87e0c61e735fa00afd}{Update} (double dtime)
+\begin{DoxyCompactList}\small\item\em Функция, обновляющаяя состояние объекта Переопределена в наследниках класса \hyperlink{classIComposite}{I\+Composite}, к которым относятся\+: Game, Player, Point, Tower, Component. \end{DoxyCompactList}\item 
+void \hyperlink{classIComposite_abf3420f55bcc97e0c97ecc7128b56661}{Deep\+Update} (double dtime)
+\begin{DoxyCompactList}\small\item\em Функция Deep\+Update Вызывает Update(dt) текущего объекта и Deep\+Update(dt) его детей. Она вызывается у \hyperlink{classCGame}{C\+Game}, который по цепочке передает его остальным объектам. \end{DoxyCompactList}\item 
+void \hyperlink{classIComposite_a889fcd5161b20592299d25d4e00727b0}{Add\+Child} (\hyperlink{classIComposite}{I\+Composite} $\ast$new\+\_\+child)
+\begin{DoxyCompactList}\small\item\em Добавление ребенка \end{DoxyCompactList}\item 
+void \hyperlink{classIComposite_a26de042dafea60095d61a1779807a7c7}{Remove\+Child} (\hyperlink{classIComposite}{I\+Composite} $\ast$child)
+\begin{DoxyCompactList}\small\item\em Удаление ребенка \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Класс \hyperlink{classIComposite}{I\+Composite} Объекты Game, Player, Point, Tower, Component являются наследниками компоновщика. В компоновщике содержится вектор детей -\/ указателей на другой компоновщик 
+
+\subsection{Member Function Documentation}
+\index{I\+Composite@{I\+Composite}!Add\+Child@{Add\+Child}}
+\index{Add\+Child@{Add\+Child}!I\+Composite@{I\+Composite}}
+\subsubsection[{\texorpdfstring{Add\+Child(\+I\+Composite $\ast$new\+\_\+child)}{AddChild(IComposite *new_child)}}]{\setlength{\rightskip}{0pt plus 5cm}void I\+Composite\+::\+Add\+Child (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+Composite} $\ast$}]{new\+\_\+child}
+\end{DoxyParamCaption}
+)}\hypertarget{classIComposite_a889fcd5161b20592299d25d4e00727b0}{}\label{classIComposite_a889fcd5161b20592299d25d4e00727b0}
+
+
+Добавление ребенка 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+child} & \\
+\hline
+\end{DoxyParams}
+\index{I\+Composite@{I\+Composite}!Deep\+Update@{Deep\+Update}}
+\index{Deep\+Update@{Deep\+Update}!I\+Composite@{I\+Composite}}
+\subsubsection[{\texorpdfstring{Deep\+Update(double dtime)}{DeepUpdate(double dtime)}}]{\setlength{\rightskip}{0pt plus 5cm}void I\+Composite\+::\+Deep\+Update (
+\begin{DoxyParamCaption}
+\item[{double}]{dtime}
+\end{DoxyParamCaption}
+)}\hypertarget{classIComposite_abf3420f55bcc97e0c97ecc7128b56661}{}\label{classIComposite_abf3420f55bcc97e0c97ecc7128b56661}
+
+
+Функция Deep\+Update Вызывает Update(dt) текущего объекта и Deep\+Update(dt) его детей. Она вызывается у \hyperlink{classCGame}{C\+Game}, который по цепочке передает его остальным объектам. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dtime} & -\/ время прошедшее с предыдущего запуска Update \\
+\hline
+\end{DoxyParams}
+\index{I\+Composite@{I\+Composite}!Remove\+Child@{Remove\+Child}}
+\index{Remove\+Child@{Remove\+Child}!I\+Composite@{I\+Composite}}
+\subsubsection[{\texorpdfstring{Remove\+Child(\+I\+Composite $\ast$child)}{RemoveChild(IComposite *child)}}]{\setlength{\rightskip}{0pt plus 5cm}void I\+Composite\+::\+Remove\+Child (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+Composite} $\ast$}]{child}
+\end{DoxyParamCaption}
+)}\hypertarget{classIComposite_a26de042dafea60095d61a1779807a7c7}{}\label{classIComposite_a26de042dafea60095d61a1779807a7c7}
+
+
+Удаление ребенка 
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & \\
+\hline
+\end{DoxyParams}
+\index{I\+Composite@{I\+Composite}!Update@{Update}}
+\index{Update@{Update}!I\+Composite@{I\+Composite}}
+\subsubsection[{\texorpdfstring{Update(double dtime)}{Update(double dtime)}}]{\setlength{\rightskip}{0pt plus 5cm}void I\+Composite\+::\+Update (
+\begin{DoxyParamCaption}
+\item[{double}]{dtime}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classIComposite_a75a8ab8f27a49b87e0c61e735fa00afd}{}\label{classIComposite_a75a8ab8f27a49b87e0c61e735fa00afd}
+
+
+Функция, обновляющаяя состояние объекта Переопределена в наследниках класса \hyperlink{classIComposite}{I\+Composite}, к которым относятся\+: Game, Player, Point, Tower, Component. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dtime} & -\/ время прошедшее с предыдущего запуска Update \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classCTower_a90009dda4be1e5e20d37a57dc8aa068b}{C\+Tower}, \hyperlink{classCGame_a7fd9071f64f9f8593ba7ef97e52747b0}{C\+Game}, \hyperlink{classIComponent_a12217e57a33f8978af5610511eaddad5}{I\+Component}, \hyperlink{classCMap_a531e772146ef58a62e1b835909e5b2e0}{C\+Map}, \hyperlink{classCPlayer_aeca038d0b0e8a7e8a6920dc066a2a22d}{C\+Player}, and \hyperlink{classCPoint_a9be3f2b4e3445a55ab8af9fd835a1c97}{C\+Point}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Composite.\+h\item 
+Composite.\+cpp\end{DoxyCompactItemize}

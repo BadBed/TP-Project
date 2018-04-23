@@ -1,30 +1,34 @@
 #pragma once
+#include "AllClasses.h"
 #include "Tower.h"
+#include "Player.h"
 
-class IProducer {
-public:
-	virtual ~IProducer();
-	virtual void SetFactoryAndPlayer(CPlayer* player, shared_ptr<IFactory> factory) = 0;
-	virtual bool IsAbleToCreate() = 0;
-	virtual CTower* Create(CPoint*) = 0;
-};
+/**
+ * \brief Реализация интерфейса класса Producer
+ * При помощи фабрики создает башню и делает все побочные действия
+ *
+ */
 
 class CProducer : public IProducer {
 public:
 	CProducer();
-	~CProducer();
+	~CProducer() override = default;
 
-	void SetFactoryAndPlayer(CPlayer* player, shared_ptr<IFactory> factory);
+	void SetFactoryAndPlayer(CPlayer* player, IFactory* factory) override;
 
-	bool IsAbleToCreate();
+	/**
+	 * \brief Функция, проверяющая, можно ли создать башню
+	 * Проверяет, достаточно ли у игрока средств и не находится ли она на перезарядке
+	 */
 
-	CTower* Create(CPoint* point);
+	bool IsAbleToCreate() override ;
 
+	CTower* Create(CPoint* point) override;
 
 private:
 	void ChangeMoney();
 	void ChangeCD();
-	shared_ptr<IFactory> _factory;
+	IFactory* _factory;
 	CPlayer* _player;
 	double _cd;
 };

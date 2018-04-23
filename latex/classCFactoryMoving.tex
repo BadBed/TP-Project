@@ -1,0 +1,66 @@
+\hypertarget{classCFactoryMoving}{}\section{C\+Factory\+Moving Class Reference}
+\label{classCFactoryMoving}\index{C\+Factory\+Moving@{C\+Factory\+Moving}}
+
+
+Реализация Фабрики для мобильной башни  
+
+
+
+
+{\ttfamily \#include $<$Tower.\+h$>$}
+
+
+
+Inheritance diagram for C\+Factory\+Moving\+:
+% FIG 0
+
+
+Collaboration diagram for C\+Factory\+Moving\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classCFactoryMoving_ad6ecf0ee9832cd2658f123c7480cf6f3}{Get\+CD} () const override\hypertarget{classCFactoryMoving_ad6ecf0ee9832cd2658f123c7480cf6f3}{}\label{classCFactoryMoving_ad6ecf0ee9832cd2658f123c7480cf6f3}
+
+\begin{DoxyCompactList}\small\item\em Возвращает время отката башни \end{DoxyCompactList}\item 
+int \hyperlink{classCFactoryMoving_a4bc59012bf43fc61f6e30b7d54391be9}{Get\+C\+O\+ST} () const override\hypertarget{classCFactoryMoving_a4bc59012bf43fc61f6e30b7d54391be9}{}\label{classCFactoryMoving_a4bc59012bf43fc61f6e30b7d54391be9}
+
+\begin{DoxyCompactList}\small\item\em Возвращает стоимость башни \end{DoxyCompactList}\item 
+\hyperlink{classCTower}{C\+Tower} $\ast$ \hyperlink{classCFactoryMoving_a2465cc2e74fd769bf84839c12d87d5eb}{Create} (\hyperlink{classCPoint}{C\+Point} $\ast$, \hyperlink{classCPlayer}{C\+Player} $\ast$) override
+\begin{DoxyCompactList}\small\item\em Создает башню \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Реализация Фабрики для мобильной башни 
+
+\subsection{Member Function Documentation}
+\index{C\+Factory\+Moving@{C\+Factory\+Moving}!Create@{Create}}
+\index{Create@{Create}!C\+Factory\+Moving@{C\+Factory\+Moving}}
+\subsubsection[{\texorpdfstring{Create(\+C\+Point $\ast$, C\+Player $\ast$) override}{Create(CPoint *, CPlayer *) override}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Tower} $\ast$ C\+Factory\+Moving\+::\+Create (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Point} $\ast$}]{, }
+\item[{{\bf C\+Player} $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classCFactoryMoving_a2465cc2e74fd769bf84839c12d87d5eb}{}\label{classCFactoryMoving_a2465cc2e74fd769bf84839c12d87d5eb}
+
+
+Создает башню 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Указатель} & на игрока, на чьей стороне башня, и указатель на точку, на которой башня находится \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Указатель на созданную башню 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classIFactory_a8d9bec1f0a8e76f379c40240296be71c}{I\+Factory}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Tower.\+h\item 
+Tower.\+cpp\end{DoxyCompactItemize}

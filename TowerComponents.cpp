@@ -1,5 +1,15 @@
 #include "TowerComponents.h"
 
+void IComponent::Update(double dt) {}
+
+void IComponent::Die() {}
+
+void IComponent::SetTower(CTower* tower) {
+    _tower = tower;
+}
+
+//***********************************************************************
+
 CTypeOfComponent IComponentPosition::GetType() {
     return COMP_POSITION;
 }
@@ -15,6 +25,7 @@ CTypeOfComponent IComponentAccessory::GetType() {
 CTypeOfComponent IComponentHealth::GetType() {
     return COMP_HEALTH;
 }
+
 
 CTypeOfComponent IComponentPower::GetType() {
     return COMP_POWER;
@@ -32,7 +43,9 @@ CTypeOfComponent IComponentPassiveSkill::GetType() {
     return COMP_PASSIVE_SKILL;
 }
 
-
+CTypeOfComponent CComponentShoudNotDie::GetType() {
+    return COMP_OTHER;
+}
 
 //---------------------------------------------------------------------------
 

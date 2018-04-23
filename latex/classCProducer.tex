@@ -1,0 +1,90 @@
+\hypertarget{classCProducer}{}\section{C\+Producer Class Reference}
+\label{classCProducer}\index{C\+Producer@{C\+Producer}}
+
+
+Реализация интерфейса класса Producer При помощи фабрики создает башню и делает все побочные действия  
+
+
+
+
+{\ttfamily \#include $<$Producer.\+h$>$}
+
+
+
+Inheritance diagram for C\+Producer\+:
+% FIG 0
+
+
+Collaboration diagram for C\+Producer\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCProducer_ad3a08a87755e1b3ac199f48e39efb7b4}{C\+Producer} ()\hypertarget{classCProducer_ad3a08a87755e1b3ac199f48e39efb7b4}{}\label{classCProducer_ad3a08a87755e1b3ac199f48e39efb7b4}
+
+\begin{DoxyCompactList}\small\item\em Реализация функций класса \hyperlink{classCProducer}{C\+Producer}. \end{DoxyCompactList}\item 
+void \hyperlink{classCProducer_a2f3a3115610b6f15d03efd30c4e32733}{Set\+Factory\+And\+Player} (\hyperlink{classCPlayer}{C\+Player} $\ast$player, \hyperlink{classIFactory}{I\+Factory} $\ast$factory) override
+\begin{DoxyCompactList}\small\item\em Функция, задающая игрока и фабрику \end{DoxyCompactList}\item 
+bool \hyperlink{classCProducer_a651ec478d4dcc8f89bea0910df27b417}{Is\+Able\+To\+Create} () override\hypertarget{classCProducer_a651ec478d4dcc8f89bea0910df27b417}{}\label{classCProducer_a651ec478d4dcc8f89bea0910df27b417}
+
+\begin{DoxyCompactList}\small\item\em Функция, проверяющая, можно ли создать башню Проверяет, достаточно ли у игрока средств и не находится ли она на перезарядке \end{DoxyCompactList}\item 
+\hyperlink{classCTower}{C\+Tower} $\ast$ \hyperlink{classCProducer_a81087eb26d152b3bb7c299422589d1d1}{Create} (\hyperlink{classCPoint}{C\+Point} $\ast$point) override
+\begin{DoxyCompactList}\small\item\em Функция, непосредственно создающая башню \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Реализация интерфейса класса Producer При помощи фабрики создает башню и делает все побочные действия 
+
+\subsection{Member Function Documentation}
+\index{C\+Producer@{C\+Producer}!Create@{Create}}
+\index{Create@{Create}!C\+Producer@{C\+Producer}}
+\subsubsection[{\texorpdfstring{Create(\+C\+Point $\ast$point) override}{Create(CPoint *point) override}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Tower} $\ast$ C\+Producer\+::\+Create (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Point} $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classCProducer_a81087eb26d152b3bb7c299422589d1d1}{}\label{classCProducer_a81087eb26d152b3bb7c299422589d1d1}
+
+
+Функция, непосредственно создающая башню 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & -\/ указатель на точку на поле \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+указатель на башню 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classIProducer_a2395dc29b79b0116d799ee9944f631e3}{I\+Producer}.
+
+\index{C\+Producer@{C\+Producer}!Set\+Factory\+And\+Player@{Set\+Factory\+And\+Player}}
+\index{Set\+Factory\+And\+Player@{Set\+Factory\+And\+Player}!C\+Producer@{C\+Producer}}
+\subsubsection[{\texorpdfstring{Set\+Factory\+And\+Player(\+C\+Player $\ast$player, I\+Factory $\ast$factory) override}{SetFactoryAndPlayer(CPlayer *player, IFactory *factory) override}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Producer\+::\+Set\+Factory\+And\+Player (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Player} $\ast$}]{player, }
+\item[{{\bf I\+Factory} $\ast$}]{factory}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classCProducer_a2f3a3115610b6f15d03efd30c4e32733}{}\label{classCProducer_a2f3a3115610b6f15d03efd30c4e32733}
+
+
+Функция, задающая игрока и фабрику 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & \\
+\hline
+{\em factory} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classIProducer_a5432b60205e45d23d0ec57f92d1c670f}{I\+Producer}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Producer.\+h\item 
+Producer.\+cpp\end{DoxyCompactItemize}
