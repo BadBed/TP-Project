@@ -215,12 +215,12 @@ int CFactoryEnlarger::GetCOST() const{
 CTower* CFactoryGenerator::Create(CPoint* point, CPlayer* player) {
     CTower* tower = new CTower;
 
-	tower->AddComponent(new CComponentHealth(HP));
-	tower->AddComponent(new CComponentAccessory(player));
-	tower->AddComponent(new CComponentPosition(point));
-	tower->AddComponent(new CComponentGraphic());
-	tower->AddComponent(new CComponentPowerGenerate());
-	tower->AddComponent(new CComponentPassiveSkillEnlarger(ENLARGE_SPEED));
+    tower->AddComponent(new CComponentHealth(HP));
+    tower->AddComponent(new CComponentAccessory(player));
+    tower->AddComponent(new CComponentPosition(point));
+    tower->AddComponent(new CComponentGraphic());
+    tower->AddComponent(new CComponentPowerGenerate());
+    tower->AddComponent(new CComponentPassiveSkillEnlarger(ENLARGE_SPEED));
 
     return tower;
 }
