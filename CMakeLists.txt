@@ -16,7 +16,7 @@ set(SOURCES_LIST
 	Producer.h
 	Tower.h
 	TowerComponents.h
-    Composite.h Map.h Map.cpp)
+    Composite.h Map.h Map.cpp IProducer.h)
 
 if(DEBUG)
 	set(CMAKE_BUILD_TYPE Debug)

@@ -93,7 +93,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Интерфейс класса Producer.  
  <a href="classIProducer.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="Producer_8h_source.html">Producer.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="IProducer_8h_source.html">IProducer.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for IProducer:</div>
 <div class="dyncontent">
@@ -103,20 +103,102 @@ Inheritance diagram for IProducer:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5432b60205e45d23d0ec57f92d1c670f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5432b60205e45d23d0ec57f92d1c670f"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>SetFactoryAndPlayer</b> (<a class="el" href="classCPlayer.html">CPlayer</a> *player, <a class="el" href="classIFactory.html">IFactory</a> *factory)=0</td></tr>
+<tr class="memitem:a5432b60205e45d23d0ec57f92d1c670f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIProducer.html#a5432b60205e45d23d0ec57f92d1c670f">SetFactoryAndPlayer</a> (<a class="el" href="classCPlayer.html">CPlayer</a> *player, <a class="el" href="classIFactory.html">IFactory</a> *factory)=0</td></tr>
+<tr class="memdesc:a5432b60205e45d23d0ec57f92d1c670f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Функция, задающая игрока и фабрику  <a href="#a5432b60205e45d23d0ec57f92d1c670f">More...</a><br /></td></tr>
 <tr class="separator:a5432b60205e45d23d0ec57f92d1c670f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb1c0b7deae16b1cb94e6639e2fef99b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afb1c0b7deae16b1cb94e6639e2fef99b"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsAbleToCreate</b> ()=0</td></tr>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIProducer.html#afb1c0b7deae16b1cb94e6639e2fef99b">IsAbleToCreate</a> ()=0</td></tr>
+<tr class="memdesc:afb1c0b7deae16b1cb94e6639e2fef99b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Функция, проверяющая, можно ли создать башню <br /></td></tr>
 <tr class="separator:afb1c0b7deae16b1cb94e6639e2fef99b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2395dc29b79b0116d799ee9944f631e3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2395dc29b79b0116d799ee9944f631e3"></a>
-virtual <a class="el" href="classCTower.html">CTower</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>Create</b> (<a class="el" href="classCPoint.html">CPoint</a> *)=0</td></tr>
+<tr class="memitem:a2395dc29b79b0116d799ee9944f631e3"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classCTower.html">CTower</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIProducer.html#a2395dc29b79b0116d799ee9944f631e3">Create</a> (<a class="el" href="classCPoint.html">CPoint</a> *)=0</td></tr>
+<tr class="memdesc:a2395dc29b79b0116d799ee9944f631e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Функция, непосредственно создающая башню  <a href="#a2395dc29b79b0116d799ee9944f631e3">More...</a><br /></td></tr>
 <tr class="separator:a2395dc29b79b0116d799ee9944f631e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Интерфейс класса Producer. </p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="Producer_8h_source.html">Producer.h</a></li>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a2395dc29b79b0116d799ee9944f631e3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classCTower.html">CTower</a>* IProducer::Create </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classCPoint.html">CPoint</a> *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Функция, непосредственно создающая башню </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">point</td><td>- указатель на точку на поле </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>указатель на башню </dd></dl>
+
+<p>Implemented in <a class="el" href="classCProducer.html#a81087eb26d152b3bb7c299422589d1d1">CProducer</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5432b60205e45d23d0ec57f92d1c670f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void IProducer::SetFactoryAndPlayer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classCPlayer.html">CPlayer</a> *&#160;</td>
+          <td class="paramname"><em>player</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classIFactory.html">IFactory</a> *&#160;</td>
+          <td class="paramname"><em>factory</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Функция, задающая игрока и фабрику </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">player</td><td></td></tr>
+    <tr><td class="paramname">factory</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="classCProducer.html#a2f3a3115610b6f15d03efd30c4e32733">CProducer</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li><a class="el" href="IProducer_8h_source.html">IProducer.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

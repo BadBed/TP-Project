@@ -1,17 +1,7 @@
 #pragma once
+#include "AllClasses.h"
 #include "Tower.h"
 #include "Player.h"
-/**
- * \brief Интерфейс класса Producer
- */
-
-class IProducer {
-public:
-	virtual ~IProducer() = default;
-	virtual void SetFactoryAndPlayer(CPlayer* player, IFactory* factory) = 0;
-	virtual bool IsAbleToCreate() = 0;
-	virtual CTower* Create(CPoint*) = 0;
-};
 
 /**
  * \brief Реализация интерфейса класса Producer
@@ -24,12 +14,6 @@ public:
 	CProducer();
 	~CProducer() override = default;
 
-	/**
-	 * \brief Функция, задающая игрока и фабрику
-	 * @param player
-	 * @param factory
-	 */
-
 	void SetFactoryAndPlayer(CPlayer* player, IFactory* factory) override;
 
 	/**
@@ -38,12 +22,6 @@ public:
 	 */
 
 	bool IsAbleToCreate() override ;
-
-	/**
-	 * \brief Функция, непосредственно создающая башню
-	 * @param point - указатель на точку на поле
-	 * @return указатель на башню
-	 */
 
 	CTower* Create(CPoint* point) override;
 

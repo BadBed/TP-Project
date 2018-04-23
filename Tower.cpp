@@ -7,6 +7,7 @@
 void CTower::AddComponent(IComponent* comp) {
     components.push_back(unique_ptr<IComponent>(comp));
     comp->SetTower(this);
+	AddChild(comp);
 }
 
 void CTower::Update(double dtime) {
@@ -27,24 +28,13 @@ void CTower::Die(){
 
 CTower* CFactoryNormal::Create(CPoint* point, CPlayer* player) {
     CTower* tower = new CTower;
-    CComponentHealth* health = new CComponentHealth(HP);
-    tower->AddComponent(health);
-    tower->AddChild(health);
-    CComponentAccessory* accessory = new CComponentAccessory(player);
-    tower->AddComponent(accessory);
-    tower->AddComponent(accessory);
-    CComponentPosition* pos = new CComponentPosition(point);
-    tower->AddComponent(pos);
-    tower->AddChild(pos);
-    CComponentGraphic* graphic = new CComponentGraphic();
-    tower->AddComponent(graphic);
-    tower->AddChild(graphic);
-    CComponentPowerUsual* powerUsual = new CComponentPowerUsual();
-    tower->AddComponent(powerUsual);
-    tower->AddChild(powerUsual);
-    CComponentTargetAttack* targetAttack = new CComponentTargetAttack(DMG, RADIUS, ATTACK_CD);
-    tower->AddComponent(targetAttack);
-    tower->AddChild(targetAttack);
+
+	tower->AddComponent(new CComponentHealth(HP));
+	tower->AddComponent(new CComponentAccessory(player));
+	tower->AddComponent(new CComponentPosition(point));
+	tower->AddComponent(new CComponentGraphic());
+	tower->AddComponent(new CComponentPowerUsual());
+	tower->AddComponent(new CComponentTargetAttack(DMG, RADIUS, ATTACK_CD));
 
     return tower;
 }
@@ -62,24 +52,12 @@ int CFactoryNormal::GetCOST() const{
 CTower* CFactoryLongRange::Create(CPoint* point, CPlayer* player) {
     CTower* tower = new CTower;
 
-    CComponentHealth* health = new CComponentHealth(HP);
-    tower->AddComponent(health);
-    tower->AddChild(health);
-    CComponentAccessory* accessory = new CComponentAccessory(player);
-    tower->AddComponent(accessory);
-    tower->AddComponent(accessory);
-    CComponentPosition* pos = new CComponentPosition(point);
-    tower->AddComponent(pos);
-    tower->AddChild(pos);
-    CComponentGraphic* graphic = new CComponentGraphic();
-    tower->AddComponent(graphic);
-    tower->AddChild(graphic);
-    CComponentPowerUsual* powerUsual = new CComponentPowerUsual();
-    tower->AddComponent(powerUsual);
-    tower->AddChild(powerUsual);
-    CComponentTargetAttack* targetAttack = new CComponentTargetAttack(DMG, RADIUS, ATTACK_CD);
-    tower->AddComponent(targetAttack);
-    tower->AddChild(targetAttack);
+	tower->AddComponent(new CComponentHealth(HP));
+	tower->AddComponent(new CComponentAccessory(player));
+	tower->AddComponent(new CComponentPosition(point));
+	tower->AddComponent(new CComponentGraphic());
+	tower->AddComponent(new CComponentPowerUsual());
+	tower->AddComponent(new CComponentTargetAttack(DMG, RADIUS, ATTACK_CD));
 
     return tower;
 }
@@ -97,21 +75,11 @@ int CFactoryLongRange::GetCOST() const{
 CTower* CFactoryProtective::Create(CPoint* point, CPlayer* player) {
     CTower* tower = new CTower;
 
-    CComponentHealth* health = new CComponentHealth(HP);
-    tower->AddComponent(health);
-    tower->AddChild(health);
-    CComponentAccessory* accessory = new CComponentAccessory(player);
-    tower->AddComponent(accessory);
-    tower->AddComponent(accessory);
-    CComponentPosition* pos = new CComponentPosition(point);
-    tower->AddComponent(pos);
-    tower->AddChild(pos);
-    CComponentGraphic* graphic = new CComponentGraphic();
-    tower->AddComponent(graphic);
-    tower->AddChild(graphic);
-    CComponentPowerUsual* powerUsual = new CComponentPowerUsual();
-    tower->AddComponent(powerUsual);
-    tower->AddChild(powerUsual);
+	tower->AddComponent(new CComponentHealth(HP));
+	tower->AddComponent(new CComponentAccessory(player));
+	tower->AddComponent(new CComponentPosition(point));
+	tower->AddComponent(new CComponentGraphic());
+	tower->AddComponent(new CComponentPowerUsual());
 
 
     return tower;
@@ -130,24 +98,12 @@ int CFactoryProtective::GetCOST() const{
 CTower* CFactoryMissile::Create(CPoint* point, CPlayer* player) {
     CTower* tower = new CTower;
 
-    CComponentHealth* health = new CComponentHealth(HP);
-    tower->AddComponent(health);
-    tower->AddChild(health);
-    CComponentAccessory* accessory = new CComponentAccessory(player);
-    tower->AddComponent(accessory);
-    tower->AddComponent(accessory);
-    CComponentPosition* pos = new CComponentPosition(point);
-    tower->AddComponent(pos);
-    tower->AddChild(pos);
-    CComponentGraphic* graphic = new CComponentGraphic();
-    tower->AddComponent(graphic);
-    tower->AddChild(graphic);
-    CComponentPowerUsual* powerUsual = new CComponentPowerUsual();
-    tower->AddComponent(powerUsual);
-    tower->AddChild(powerUsual);
-    CComponentActiveSkillMissile* activeSkillMissile = new CComponentActiveSkillMissile(SKILL_CD);
-    tower->AddComponent(activeSkillMissile);
-    tower->AddChild(activeSkillMissile);
+	tower->AddComponent(new CComponentHealth(HP));
+	tower->AddComponent(new CComponentAccessory(player));
+	tower->AddComponent(new CComponentPosition(point));
+	tower->AddComponent(new CComponentGraphic());
+	tower->AddComponent(new CComponentPowerUsual());
+	tower->AddComponent(new CComponentActiveSkillMissile(SKILL_CD));
 
     return tower;
 }
@@ -165,24 +121,12 @@ int CFactoryMissile::GetCOST() const{
 CTower* CFactorySupport::Create(CPoint* point, CPlayer* player) {
     CTower* tower = new CTower;
 
-    CComponentHealth* health = new CComponentHealth(HP);
-    tower->AddComponent(health);
-    tower->AddChild(health);
-    CComponentAccessory* accessory = new CComponentAccessory(player);
-    tower->AddComponent(accessory);
-    tower->AddComponent(accessory);
-    CComponentPosition* pos = new CComponentPosition(point);
-    tower->AddComponent(pos);
-    tower->AddChild(pos);
-    CComponentGraphic* graphic = new CComponentGraphic();
-    tower->AddComponent(graphic);
-    tower->AddChild(graphic);
-    CComponentPowerUsual* powerUsual = new CComponentPowerUsual();
-    tower->AddComponent(powerUsual);
-    tower->AddChild(powerUsual);
-    CComponentTargetSkillSupport* targetSkillSupport = new CComponentTargetSkillSupport(RADIUS, MULTIPLY);
-    tower->AddComponent(targetSkillSupport);
-    tower->AddChild(targetSkillSupport);
+	tower->AddComponent(new CComponentHealth(HP));
+	tower->AddComponent(new CComponentAccessory(player));
+	tower->AddComponent(new CComponentPosition(point));
+	tower->AddComponent(new CComponentGraphic());
+	tower->AddComponent(new CComponentPowerUsual());
+	tower->AddComponent(new CComponentTargetSkillSupport(RADIUS, MULTIPLY));
 
     return tower;
 }
@@ -200,27 +144,13 @@ int CFactorySupport::GetCOST() const{
 CTower* CFactoryMoving::Create(CPoint* point, CPlayer* player) {
     CTower* tower = new CTower;
 
-    CComponentHealth* health = new CComponentHealth(HP);
-    tower->AddComponent(health);
-    tower->AddChild(health);
-    CComponentAccessory* accessory = new CComponentAccessory(player);
-    tower->AddComponent(accessory);
-    tower->AddComponent(accessory);
-    CComponentPosition* pos = new CComponentPosition(point);
-    tower->AddComponent(pos);
-    tower->AddChild(pos);
-    CComponentGraphic* graphic = new CComponentGraphic();
-    tower->AddComponent(graphic);
-    tower->AddChild(graphic);
-    CComponentPowerMoving* moving = new CComponentPowerMoving();
-    tower->AddComponent(moving);
-    tower->AddChild(moving);
-    CComponentTargetAttack* targetAttack = new CComponentTargetAttack(DMG, RADIUS, ATTACK_CD);
-    tower->AddComponent(targetAttack);
-    tower->AddChild(targetAttack);
-    CComponentActiveSkillMoving* activeSkillMoving = new CComponentActiveSkillMoving(SKILL_CD);
-    tower->AddComponent(activeSkillMoving);
-    tower->AddChild(activeSkillMoving);
+	tower->AddComponent(new CComponentHealth(HP));
+	tower->AddComponent(new CComponentAccessory(player));
+	tower->AddComponent(new CComponentPosition(point));
+	tower->AddComponent(new CComponentGraphic());
+	tower->AddComponent(new CComponentPowerMoving());
+	tower->AddComponent(new CComponentTargetAttack(DMG, RADIUS, ATTACK_CD));
+	tower->AddComponent(new CComponentActiveSkillMoving(SKILL_CD));
 
     return tower;
 }
@@ -238,24 +168,12 @@ int CFactoryMoving::GetCOST() const{
 CTower* CFactoryHealer::Create(CPoint* point, CPlayer* player) {
     CTower* tower = new CTower;
 
-    CComponentHealth* health = new CComponentHealth(HP);
-    tower->AddComponent(health);
-    tower->AddChild(health);
-    CComponentAccessory* accessory = new CComponentAccessory(player);
-    tower->AddComponent(accessory);
-    tower->AddComponent(accessory);
-    CComponentPosition* pos = new CComponentPosition(point);
-    tower->AddComponent(pos);
-    tower->AddChild(pos);
-    CComponentGraphic* graphic = new CComponentGraphic();
-    tower->AddComponent(graphic);
-    tower->AddChild(graphic);
-    CComponentPowerUsual* powerUsual = new CComponentPowerUsual();
-    tower->AddComponent(powerUsual);
-    tower->AddChild(powerUsual);
-    CComponentPassiveSkillHeal* skillHeal = new CComponentPassiveSkillHeal(RADIUS, HEAL_SPEED);
-    tower->AddComponent(skillHeal);
-    tower->AddChild(skillHeal);
+	tower->AddComponent(new CComponentHealth(HP));
+	tower->AddComponent(new CComponentAccessory(player));
+	tower->AddComponent(new CComponentPosition(point));
+	tower->AddComponent(new CComponentGraphic());
+	tower->AddComponent(new CComponentPowerUsual());
+	tower->AddComponent(new CComponentPassiveSkillHeal(RADIUS, HEAL_SPEED));
 
     return tower;
 }
@@ -273,24 +191,12 @@ int CFactoryHealer::GetCOST() const{
 CTower* CFactoryEnlarger::Create(CPoint* point, CPlayer* player) {
     CTower* tower = new CTower;
 
-    CComponentHealth* health = new CComponentHealth(HP);
-    tower->AddComponent(health);
-    tower->AddChild(health);
-    CComponentAccessory* accessory = new CComponentAccessory(player);
-    tower->AddComponent(accessory);
-    tower->AddComponent(accessory);
-    CComponentPosition* pos = new CComponentPosition(point);
-    tower->AddComponent(pos);
-    tower->AddChild(pos);
-    CComponentGraphic* graphic = new CComponentGraphic();
-    tower->AddComponent(graphic);
-    tower->AddChild(graphic);
-    CComponentPowerUsual* powerUsual = new CComponentPowerUsual();
-    tower->AddComponent(powerUsual);
-    tower->AddChild(powerUsual);
-    CComponentPassiveSkillEnlarger* enlarger = new CComponentPassiveSkillEnlarger(ENLARGE_SPEED);
-    tower->AddComponent(enlarger);
-    tower->AddChild(enlarger);
+	tower->AddComponent(new CComponentHealth(HP));
+	tower->AddComponent(new CComponentAccessory(player));
+	tower->AddComponent(new CComponentPosition(point));
+	tower->AddComponent(new CComponentGraphic());
+	tower->AddComponent(new CComponentPowerUsual());
+	tower->AddComponent(new CComponentPassiveSkillEnlarger(ENLARGE_SPEED));
 
 
     return tower;
@@ -309,24 +215,12 @@ int CFactoryEnlarger::GetCOST() const{
 CTower* CFactoryGenerator::Create(CPoint* point, CPlayer* player) {
     CTower* tower = new CTower;
 
-    CComponentHealth* health = new CComponentHealth(HP);
-    tower->AddComponent(health);
-    tower->AddChild(health);
-    CComponentAccessory* accessory = new CComponentAccessory(player);
-    tower->AddComponent(accessory);
-    tower->AddComponent(accessory);
-    CComponentPosition* pos = new CComponentPosition(point);
-    tower->AddComponent(pos);
-    tower->AddChild(pos);
-    CComponentGraphic* graphic = new CComponentGraphic();
-    tower->AddComponent(graphic);
-    tower->AddChild(graphic);
-    CComponentPowerGenerate* powerGenerate = new CComponentPowerGenerate();
-    tower->AddComponent(powerGenerate);
-    tower->AddChild(powerGenerate);
-    CComponentPassiveSkillEnlarger* skillEnlarger = new CComponentPassiveSkillEnlarger(ENLARGE_SPEED);
-    tower->AddComponent(skillEnlarger);
-    tower->AddChild(skillEnlarger);
+	tower->AddComponent(new CComponentHealth(HP));
+	tower->AddComponent(new CComponentAccessory(player));
+	tower->AddComponent(new CComponentPosition(point));
+	tower->AddComponent(new CComponentGraphic());
+	tower->AddComponent(new CComponentPowerGenerate());
+	tower->AddComponent(new CComponentPassiveSkillEnlarger(ENLARGE_SPEED));
 
     return tower;
 }
@@ -344,24 +238,12 @@ int CFactoryGenerator::GetCOST() const{
 CTower* CFactoryBase::Create(CPoint* point, CPlayer* player) {
     CTower* tower = new CTower;
 
-    CComponentHealth* health = new CComponentHealth(HP);
-    tower->AddComponent(health);
-    tower->AddChild(health);
-    CComponentAccessory* accessory = new CComponentAccessory(player);
-    tower->AddComponent(accessory);
-    tower->AddComponent(accessory);
-    CComponentPosition* pos = new CComponentPosition(point);
-    tower->AddComponent(pos);
-    tower->AddChild(pos);
-    CComponentGraphic* graphic = new CComponentGraphic();
-    tower->AddComponent(graphic);
-    tower->AddChild(graphic);
-    CComponentPowerGenerate* powerGenerate = new CComponentPowerGenerate();
-    tower->AddComponent(powerGenerate);
-    tower->AddChild(powerGenerate);
-    CComponentShoudNotDie* shoudNotDie = new CComponentShoudNotDie();
-    tower->AddComponent(shoudNotDie);
-    tower->AddChild(shoudNotDie);
+	tower->AddComponent(new CComponentHealth(HP));
+	tower->AddComponent(new CComponentAccessory(player));
+	tower->AddComponent(new CComponentPosition(point));
+	tower->AddComponent(new CComponentGraphic());
+	tower->AddComponent(new CComponentPowerGenerate());
+	tower->AddComponent(new CComponentShoudNotDie());
 
     return tower;
 }

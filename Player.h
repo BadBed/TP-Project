@@ -1,6 +1,7 @@
 #pragma once
-
+#include "AllClasses.h"
 #include "Tower.h"
+#include "IProducer.h"
 
 /**
  * \brief Класс Player
@@ -15,6 +16,8 @@ public:
 
     void Update(double dtime) override;
 
+
 private:
+	std::vector<unique_ptr<IProducer> > buffer;
 
 };
